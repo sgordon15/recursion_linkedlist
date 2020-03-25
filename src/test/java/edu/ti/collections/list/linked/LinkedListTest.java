@@ -13,6 +13,12 @@ public class LinkedListTest {
     }
 
     @Test
+    public void testNewEmptyListIsZeroSize() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        assertEquals(0, linkedList.size());
+    }
+
+    @Test
     public void testNewNotEmptyListIsNotEmpty() {
         Integer i14 = 14;
         LinkedList<Integer> linkedList = new LinkedList<>(i14);
