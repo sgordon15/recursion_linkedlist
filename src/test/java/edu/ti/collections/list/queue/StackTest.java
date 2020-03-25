@@ -1,7 +1,6 @@
 package edu.ti.collections.list.queue;
 
 import edu.ti.collections.list.dataobj.Person;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -21,6 +20,26 @@ public class StackTest {
         assertFalse(stack.isEmpty());
         assertEquals(1, stack.size());
     }
+    
+    @Test
+    public void testSizeUpAndDown() {
+        Stack<String> stringStack = new Stack<>();
+        assertEquals(0, stringStack.size());
+        stringStack.push("Foo");
+        assertEquals(1, stringStack.size());
+        stringStack.push("Bar");
+        assertEquals(2, stringStack.size());
+        stringStack.push("Baz");
+        assertEquals(3, stringStack.size());
+        stringStack.pop();
+        assertEquals(2, stringStack.size());
+        stringStack.pop();
+        assertEquals(1, stringStack.size());
+        stringStack.pop();
+        assertEquals(0, stringStack.size());
+
+        assertTrue(stringStack.isEmpty());
+    }
 
     @Test
     public void testPopIsPush() {
@@ -34,23 +53,17 @@ public class StackTest {
         stack.push(carl);
         stack.push(doris);
 
-        assertEquals(4, stack.size());
-
         Person personPopped = stack.pop();
         assertEquals(doris, personPopped);
-        assertEquals(3, stack.size());
 
         personPopped = stack.pop();
         assertEquals(carl, personPopped);
-        assertEquals(2, stack.size());
 
         personPopped = stack.pop();
         assertEquals(bob, personPopped);
-        assertEquals(1, stack.size());
 
         personPopped = stack.pop();
         assertEquals(alice, personPopped);
-        assertEquals(0, stack.size());
 
         assertTrue(stack.isEmpty());
     }

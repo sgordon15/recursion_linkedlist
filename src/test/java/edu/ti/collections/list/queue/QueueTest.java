@@ -22,6 +22,26 @@ public class QueueTest {
     }
 
     @Test
+    public void testSizeUpAndDown() {
+        Queue<String> stringQueue = new Queue<>();
+        assertEquals(0, stringQueue.size());
+        stringQueue.enqueue("Foo");
+        assertEquals(1, stringQueue.size());
+        stringQueue.enqueue("Bar");
+        assertEquals(2, stringQueue.size());
+        stringQueue.enqueue("Baz");
+        assertEquals(3, stringQueue.size());
+        stringQueue.dequeue();
+        assertEquals(2, stringQueue.size());
+        stringQueue.dequeue();
+        assertEquals(1, stringQueue.size());
+        stringQueue.dequeue();
+        assertEquals(0, stringQueue.size());
+
+        assertTrue(stringQueue.isEmpty());
+    }
+
+    @Test
     public void testPopIsPush() {
         Queue<Person> queue = new Queue<>();
         Person alice = new Person("Smith", "Alice");
@@ -33,24 +53,16 @@ public class QueueTest {
         queue.enqueue(carl);
         queue.enqueue(doris);
 
-        assertEquals(4, queue.size());
-
         Person personDequeued = queue.dequeue();
         assertEquals(alice, personDequeued);
-        assertEquals(3, queue.size());
 
         personDequeued = queue.dequeue();
         assertEquals(bob, personDequeued);
-        assertEquals(2, queue.size());
 
         personDequeued = queue.dequeue();
         assertEquals(carl, personDequeued);
-        assertEquals(1, queue.size());
 
         personDequeued = queue.dequeue();
         assertEquals(doris, personDequeued);
-        assertEquals(0, queue.size());
-
-        assertTrue(queue.isEmpty());
     }
 }
