@@ -1,14 +1,14 @@
 package edu.ti.collections.list.dataobj;
 
 public class Person {
-    private String firstName;
+    private String fn;
     private String lastName;
 
     public Person(String lastName, String firstName) {
         this.lastName = lastName;
-        this.firstName = firstName;
+        this.fn = firstName;
     }
 
     @Override
-    public String toString() { return lastName + ", " + firstName;}
+    public String toString() { return "lastName is " + lastName + ", firstName is " + fn;}
 }

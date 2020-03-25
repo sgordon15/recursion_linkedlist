@@ -40,7 +40,6 @@ public class LinkedList<T> {
         return (head == null);
     }
 
-    //TODO -- implement private helper method end that returns last Node in list
     private Node end() {
         Node endNode = head;
         while (endNode.getNext() != null) {
@@ -49,7 +48,6 @@ public class LinkedList<T> {
         return endNode;
     }
 
-    //TODO -- implement size to return number of Nodes in list
     public int size() {
         int size = 0;
         for (Node start = head; start != null; start = start.next) {
@@ -58,14 +56,12 @@ public class LinkedList<T> {
         return size;
     }
 
-    //TODO -- implement insert, which inserts Node for object as new head of list
     public void insert(T object) {
         Node newNode = new Node(object);
         newNode.setNext(head);
         head = newNode;
     }
 
-    //TODO -- implement append, that appends Node to end of list
     public void append(T object) {
         Node newNode = new Node(object);
         Node endNode = end();
@@ -76,8 +72,6 @@ public class LinkedList<T> {
         }
     }
 
-    //TODO -- implement get to retrieve the n-th object in the list,
-    //        return null if n > (size() - 1)
     public T get(int n) {
         T requestedObject = null;
         if (n < size()) {
@@ -90,8 +84,6 @@ public class LinkedList<T> {
         return requestedObject;
     }
 
-    //TODO -- implement remove to remove n-th element of list,
-    //        return Object if n < size(), null otherwise
     public T remove(int n) {
         T requestedObject = null;
         if (n < size()) {
@@ -111,8 +103,6 @@ public class LinkedList<T> {
         return requestedObject;
     }
 
-    //TODO -- implement remove to remove given object from list,
-    //        return Object if object is in the list, null otherwise
     public T remove(T object) {
         T requestedObject = null;
         if (head != null) {
