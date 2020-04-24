@@ -6,10 +6,12 @@ public class LinkedList<T> {
         Node next = null;
 
         public Node(T payload) {
+
             this.payload = payload;
         }
 
         public T getPayload() {
+
             return payload;
         }
 

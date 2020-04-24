@@ -1,16 +1,18 @@
 package edu.ti.collections.list.linked;
 
 import edu.ti.collections.list.dataobj.Person;
+import junit.framework.TestCase;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-public class LinkedListTest {
+import static org.junit.Assert.assertEquals;
 
+public class recursivelinkedlistTest extends TestCase {
     @Test
     public void testNewEmptyListIsEmpty() {
-    LinkedList<Integer> linkedList = new LinkedList<>();
-    assertTrue(linkedList.isEmpty());
-}
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        assertTrue(linkedList.isEmpty());
+    }
 
     @Test
     public void testNewEmptyListIsZeroSize() {
